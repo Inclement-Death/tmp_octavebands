@@ -4,37 +4,6 @@
 
 #include "Calculations.hpp"
 
-#define ONE_SIXTH 1.0/6.0
-#define ONE_TWELVETH 1.0/12.0
-
-template<FractionalOctaves Octaves>
-struct OctaveBandCount
-{
-  const enum { count = 11 };
-  static constexpr const double exp = 0.5;
-};
-
-template<>
-struct OctaveBandCount<Half>
-{
-  const enum { count = 22 };
-  static constexpr const double exp = 0.25;
-};
-
-template<>
-struct OctaveBandCount<Third>
-{
-  const enum { count = 32 };
-  static constexpr const double exp = ONE_SIXTH;
-};
-
-template<>
-struct OctaveBandCount<Sixth>
-{
-  const enum { count = 63 };
-  static constexpr const double exp = ONE_TWELVETH;
-};
-
 class OctaveBand
 {
   double m_preferred;
