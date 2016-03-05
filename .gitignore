@@ -26,3 +26,7 @@
 *.exe
 *.out
 *.app
+*.sdf
+*.opendb
+*.user
+/.vs/tmp_octavebands/v14
