@@ -59,26 +59,28 @@
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="tmp_octavebands.cpp" />
+    <ClCompile Include="src\tmp_octavebands.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Calculations.hpp" />
-    <ClInclude Include="CenterFrequencies.hpp" />
-    <ClInclude Include="DoubleMath.hpp" />
-    <ClInclude Include="Enums.hpp" />
-    <ClInclude Include="Fraction.hpp" />
-    <ClInclude Include="OctaveBand.hpp" />
-    <ClInclude Include="OctaveBandFactory.hpp" />
-    <ClInclude Include="OctaveUtil.hpp" />
-    <ClInclude Include="pch.hpp" />
-    <ClInclude Include="PreferredCenters.hpp" />
-    <ClInclude Include="tmp_octavebands.h" />
-    <ClInclude Include="TMP_Utils.hpp" />
+    <ClInclude Include="include\Calculations.hpp" />
+    <ClInclude Include="include\CenterFrequencies.hpp" />
+    <ClInclude Include="include\DoubleMath.hpp" />
+    <ClInclude Include="include\Enums.hpp" />
+    <ClInclude Include="include\Fraction.hpp" />
+    <ClInclude Include="include\OctaveBand.hpp" />
+    <ClInclude Include="include\OctaveBandFactory.hpp" />
+    <ClInclude Include="include\OctaveUtil.hpp" />
+    <ClInclude Include="include\pch.hpp" />
+    <ClInclude Include="include\PreferredCenters.hpp" />
+    <ClInclude Include="src\tmp_octavebands.h" />
+    <ClInclude Include="include\TMP_Utils.hpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />
     <None Include="LICENSE" />
     <None Include="README.md" />
+    <None Include="scripts\genie.lua" />
+    <None Include="scripts\tmp_octavebands.lua" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />

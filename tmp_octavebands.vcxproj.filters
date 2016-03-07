@@ -15,45 +15,40 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="tmp_octavebands.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="tmp_octavebands.h">
+    <ClInclude Include="include\Calculations.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Calculations.hpp">
+    <ClInclude Include="include\CenterFrequencies.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CenterFrequencies.hpp">
+    <ClInclude Include="include\DoubleMath.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DoubleMath.hpp">
+    <ClInclude Include="include\Enums.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Enums.hpp">
+    <ClInclude Include="include\Fraction.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Fraction.hpp">
+    <ClInclude Include="include\OctaveBand.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="OctaveBand.hpp">
+    <ClInclude Include="include\OctaveBandFactory.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="OctaveBandFactory.hpp">
+    <ClInclude Include="include\OctaveUtil.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="PreferredCenters.hpp">
+    <ClInclude Include="include\pch.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TMP_Utils.hpp">
+    <ClInclude Include="include\PreferredCenters.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="pch.hpp">
+    <ClInclude Include="include\TMP_Utils.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="OctaveUtil.hpp">
+    <ClInclude Include="src\tmp_octavebands.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -61,5 +56,12 @@
     <None Include="LICENSE" />
     <None Include="README.md" />
     <None Include=".gitignore" />
+    <None Include="scripts\tmp_octavebands.lua" />
+    <None Include="scripts\genie.lua" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\tmp_octavebands.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

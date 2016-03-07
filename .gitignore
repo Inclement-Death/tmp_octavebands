@@ -30,3 +30,6 @@
 *.opendb
 *.user
 /.vs/tmp_octavebands/v14
+
+# Do not ignore the VS project/solution generator
+!genie.exe
