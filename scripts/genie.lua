@@ -117,7 +117,55 @@ project ("tmp_octavebands" .. _name)
 			"-weak_framework Metal",
 		}
 
-		configuration {}
+	configuration { "ios* or tvos*" }
+		kind "ConsoleApp"
+		linkoptions {
+			"-framework CoreFoundation",
+			"-framework Foundation",
+			"-framework OpenGLES",
+			"-framework UIKit",
+			"-framework QuartzCore",
+			"-weak_framework Metal",
+		}
 
-		copyLib()
+	configuration { "xcode4", "ios" }
+		kind "WindowedApp"
+		files {
+			path.join(BGFX_DIR, "examples/runtime/iOS-Info.plist"),
+		}
+
+	configuration { "xcode4", "tvos" }
+		kind "WindowedApp"
+		files {
+			path.join(BGFX_DIR, "examples/runtime/tvOS-Info.plist"),
+		}
+
+	configuration { "qnx*" }
+		targetextension ""
+		links {
+			"EGL",
+			"GLESv2",
+		}
+
+	configuration {}
+
+	strip()
+
+	configuration {}
+
+		includedirs {
+			path.join(BGFX_DIR, "include"),
+		}
+
+		files {
+			path.join(BGFX_DIR, "include/**.h"),
+			path.join(BGFX_DIR, "src/**.cpp"),
+			path.join(BGFX_DIR, "src/**.h"),
+		}
+
+		removefiles {
+			path.join(BGFX_DIR, "src/**.bin.h"),
+		}
+
+	copyLib()
 end

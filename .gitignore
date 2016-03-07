@@ -24,6 +24,7 @@
 
 # Executables
 *.exe
+!genie.exe
 *.out
 *.app
 *.sdf
@@ -37,4 +38,3 @@
 /.vs/tmp_octavebands/v14
 
 # Do not ignore the VS project/solution generator
-!genie.exe
