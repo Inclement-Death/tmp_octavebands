@@ -29,6 +29,11 @@
 *.sdf
 *.opendb
 *.user
+
+# Solution and Project files
+# *.sln
+# *.vcxproj
+# *.vcxproj.filters
 /.vs/tmp_octavebands/v14
 
 # Do not ignore the VS project/solution generator

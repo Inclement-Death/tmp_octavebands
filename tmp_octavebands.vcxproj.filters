@@ -58,6 +58,7 @@
     <None Include=".gitignore" />
     <None Include="scripts\tmp_octavebands.lua" />
     <None Include="scripts\genie.lua" />
+    <None Include="scripts\toolchain.lua" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\tmp_octavebands.cpp">

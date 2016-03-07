@@ -81,6 +81,7 @@
     <None Include="README.md" />
     <None Include="scripts\genie.lua" />
     <None Include="scripts\tmp_octavebands.lua" />
+    <None Include="scripts\toolchain.lua" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />
