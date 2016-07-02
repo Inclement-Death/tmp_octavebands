@@ -21,6 +21,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)OctaveBand.hpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)OctaveBandFactory.hpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)OctaveUtil.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)ParamPack.hpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pch.hpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)PreferredCenters.hpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)TMP_Utils.hpp" />
