@@ -1,0 +1,3 @@
+﻿  pch.hpp
+clang.exe : error : no such file or directory: 'D:\Users\Robert\Projects\GitHub\tmp_octavebands\pch.hpp'
+clang.exe : error : no input files

@@ -26,10 +26,7 @@ int main()
 
         if (bandMap.find(band.get_PreferredAsWholeNumber()) == bandMap.end())
         {
-            auto bandPair = make_pair<uint32_t, 
-                OctaveBands::OctaveBand>(band.get_PreferredAsWholeNumber(), move(band));
-
-            bandMap.emplace(bandPair);
+            bandMap.emplace(band.get_PreferredAsWholeNumber(), move(band));
         }
     }
 

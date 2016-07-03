@@ -26,42 +26,76 @@ namespace OctaveBands
             m_bandwidth(width)
         {};
 
-        //TODO: add overloaded comparison operators
-
-        constexpr double get_Preferred() const
+        constexpr double get_Preferred() const noexcept
         {
             return m_preferred;
         };
 
-        constexpr uint32_t get_PreferredAsWholeNumber() const
+        constexpr uint32_t get_PreferredAsWholeNumber() const noexcept
         {
             return static_cast<uint32_t>(m_preferred + 0.5);
         }
 
-        constexpr double get_Center() const
+        constexpr double get_Center() const noexcept
         {
             return m_center;
         };
 
-        constexpr const ProcessingFlags&& get_ProcessFlags() const noexcept
+        constexpr ProcessingFlags get_ProcessFlags() const noexcept
         {
-            return std::forward<const ProcessingFlags>(m_processFlags);
+            return m_processFlags;
         };
 
-        const double&& get_UpperLimit() const noexcept
+        constexpr double get_UpperLimit() const noexcept
         {
-            return std::forward<const double>(m_upperLimit);
+            return m_upperLimit;
         };
 
-        const double&& get_LowerLimit() const noexcept
+        constexpr double get_LowerLimit() const noexcept
         {
-            return std::forward<const double>(m_lowerLimit);
+            return m_lowerLimit;
         };
 
-        const double&& get_Bandwidth() const noexcept
+        constexpr double get_Bandwidth() const noexcept
         {
-            return std::forward<const double>(m_bandwidth);
+            return m_bandwidth;
         };
+
+        bool operator<(const OctaveBand& lhs) const
+        {
+            return m_preferred < lhs.get_Preferred();
+        }
+
+        bool operator>(const OctaveBand& lhs) const
+        {
+            return m_preferred > lhs.get_Preferred();
+        }
+
+        bool operator==(const OctaveBand& lhs) const
+        {
+            return DoubleMath::IsSimilar(m_preferred, lhs.get_Preferred(), 0.05)
+                && m_processFlags == lhs.get_ProcessFlags();
+        }
+
+        bool operator<=(const OctaveBand& lhs) const
+        {
+            return m_preferred < lhs.get_Preferred()
+                && (m_preferred == lhs.get_Preferred()
+                    && m_processFlags == lhs.get_ProcessFlags());
+        }
+
+        bool operator>=(const OctaveBand& lhs) const
+        {
+            return m_preferred > lhs.get_Preferred()
+                && (m_preferred == lhs.get_Preferred()
+                    && m_processFlags == lhs.get_ProcessFlags());
+        }
+
+        bool operator!=(const OctaveBand& lhs) const
+        {
+            return DoubleMath::IsSimilar(m_preferred, lhs.get_Preferred(), 0.05)
+                && m_processFlags == lhs.get_ProcessFlags();
+        }
     };
 
     template<FractionalOctaves Reference,
