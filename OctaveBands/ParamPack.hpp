@@ -8,14 +8,13 @@ using namespace std;
     template<typename... T>
     struct ParamPack
     {
+        //typedef tuple<T...> to_tuple;
+
+        //const tuple<T...> as_tuple = { T()... };
         static const size_t size = sizeof...(T);
-        typedef tuple<T...> to_tuple;
-        
-        const tuple<T...> as_tuple = { T()... };
 
         template<typename Ty>
-
-        array<Ty, size> As_Array()
+        static array<Ty, size> As_Array()
         {
             return{ T()... };
         }

@@ -8,7 +8,7 @@
 #include <map>
 
 const OctaveBands::FractionalOctaves AdjustOctaves = OctaveBands::Full;
-const OctaveBands::FractionalOctaves DisplayOctaves = OctaveBands::Third;
+const OctaveBands::FractionalOctaves DisplayOctaves = OctaveBands::Half;
 
 typedef OctaveBands::BandFactory<AdjustOctaves, false, DisplayOctaves>::factory Factory;
 typedef Factory::result Bands;
@@ -18,7 +18,7 @@ typedef Factory::secondaryResult Secondary;
 int main()
 {
     map<uint32_t, OctaveBands::OctaveBand> bandMap;
-    auto bands = Bands().As_Array<OctaveBands::OctaveBand>();
+    auto bands = Bands::As_Array<OctaveBands::OctaveBand>();
 
     for (size_t i = 0; i < Bands::size; ++i)
     {
@@ -37,6 +37,7 @@ int main()
     cout << "  total size:     " << Bands::size << endl;
     cout << "  primary size:   " << Primary::size << endl;
     cout << "  secondary size: " << Secondary::size << endl;
+    cout << "  output size:    " << bandMap.size() << endl;
 
     cout << "Contents: --------------------------------------------" << endl;
 

@@ -3,6 +3,7 @@
 #include "pch.hpp"
 
 #include "Calculations.hpp"
+#include <sstream>
 
 namespace OctaveBands
 {
@@ -73,7 +74,7 @@ namespace OctaveBands
 
         bool operator==(const OctaveBand& lhs) const
         {
-            return DoubleMath::IsSimilar(m_preferred, lhs.get_Preferred(), 0.05)
+            return m_preferred == lhs.get_Preferred()
                 && m_processFlags == lhs.get_ProcessFlags();
         }
 
@@ -93,9 +94,10 @@ namespace OctaveBands
 
         bool operator!=(const OctaveBand& lhs) const
         {
-            return DoubleMath::IsSimilar(m_preferred, lhs.get_Preferred(), 0.05)
-                && m_processFlags == lhs.get_ProcessFlags();
+            return !(DoubleMath::IsSimilar(m_preferred, lhs.get_Preferred(), 0.05)
+                && m_processFlags == lhs.get_ProcessFlags());
         }
+
     };
 
     template<FractionalOctaves Reference,

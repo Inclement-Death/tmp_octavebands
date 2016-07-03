@@ -62,26 +62,23 @@ namespace OctaveBands
         FractionalOctaves OutputFract>
         struct BandFactory_Impl
     {
-        //static const FractionalOctaves PrimaryFract =
-        //TMP::TMP_If<(OutputFract > AdjustFract), FractionalOctaves,
-        //    OutputFract, AdjustFract>::result;
-
-        //static const FractionalOctaves SecondaryFract =
-        //TMP::TMP_If<(OutputFract < AdjustFract), FractionalOctaves,
-        //    AdjustFract, OutputFract>::result;
-
-        static const ProcessingFlags PrimaryFlags =
-            TMP::TMP_If<(OutputFract > AdjustFract), ProcessingFlags, Output,
-                        TMP::TMP_If<OutputAdjustmentBands, ProcessingFlags, Both, Adjust>::result>::result;
+        static const ProcessingFlags PrimaryFlags = 
+            OutputFract > AdjustFract 
+                ? Output 
+                : OutputAdjustmentBands 
+                    ? Both 
+                    : Adjust;
 
         static const ProcessingFlags SecondaryFlags =
-            TMP::TMP_If<(OutputFract < AdjustFract), ProcessingFlags,
-                        TMP::TMP_If<OutputAdjustmentBands, ProcessingFlags, Both, Adjust>::result, Output>::result;
+            OutputFract < AdjustFract
+                ? Output
+                : OutputAdjustmentBands
+                    ? Both
+                    : Adjust;
 
         using PrimaryUtil = OctaveUtil<AdjustFract, PrimaryFlags>;
         using SecondaryUtil = OctaveUtil<OutputFract, SecondaryFlags>;
 
-        //TODO: generate both primary and secondary at the same time
         using primaryResult = typename BandGen<1, 0, PrimaryUtil::size - 1, PrimaryUtil::add,
             AdjustFract, PrimaryFlags, Factory<AdjustFract, PrimaryFlags,
             pack_element<0, PreferredCenters::value>::type,
